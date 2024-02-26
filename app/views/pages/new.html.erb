@@ -1,0 +1,20 @@
+<h1>New Game</h1>
+
+<ul class="d-flex flex-row">
+  <% @letters.each do |letter| %>
+    <li class="d-flex m-1"><%= letter %></li>
+  <% end %>
+</ul>
+
+<form action="/score" data-turbo="false" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <label for="answer"> What is the longest word you can make?</label>
+
+    <div class="flex-container" id="flexBox">
+
+      <input type="text" name="answer" class="form-control rounded-0">
+      <input type="submit" name="Play" class="btn btn-primary" value="Play" id="button">
+
+    </div>
+</form>
